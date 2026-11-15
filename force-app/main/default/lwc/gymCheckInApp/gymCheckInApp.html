@@ -1,0 +1,30 @@
+<template>
+    <lightning-card title="Gym Member Check-In" icon-name="standard:location">
+        <div class="slds-m-around_medium">
+           <!-- Loading Spinner -->
+<template if:true={isLoading}>
+    <lightning-spinner alt-text="Loading..." size="medium"></lightning-spinner>
+</template>
+            <!-- Active Members Dropdown -->
+            <lightning-combobox
+                name="memberSelect"
+                label="Select Active Member"
+                value={selectedMemberId}
+                placeholder="Choose Member"
+                options={memberOptions}
+                onchange={handleMemberChange}>
+            </lightning-combobox>
+
+            <!-- Check-In Button -->
+            <div class="slds-m-top_medium">
+                <lightning-button 
+                    label="Check-In" 
+                    variant="brand" 
+                    onclick={handleCheckIn}
+                    disabled={isButtonDisabled}>
+                </lightning-button>
+            </div>
+
+        </div>
+    </lightning-card>
+</template>
