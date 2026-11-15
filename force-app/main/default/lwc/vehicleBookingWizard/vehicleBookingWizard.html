@@ -1,0 +1,77 @@
+<template>
+    <lightning-card title="Vehicle Booking Wizard" icon-name="">
+        <div class="slds-p-around_medium" >
+            <lightning-combobox 
+            name="vehicleType" 
+            label="Vehicle Type" 
+            placeholder="Select Vehicle Type"
+            value={selecetdVehicleId} 
+            options={vehicleOptions} 
+            onchange={handleVehicleTypeChange}
+            required></lightning-combobox>
+
+            <lightning-input 
+            type="text" 
+            label="Pick Up Location" 
+            value={pickUpLocation}
+            onchange={handlePickUpLocationChange} 
+            required></lightning-input>
+
+            <lightning-input 
+            type="text" 
+            label="Drop Location" 
+            value={dropLocation}
+            onchange={handleDropLocationChange} 
+            required></lightning-input>
+
+            <lightning-input type="date" 
+            label="Pick Up Date" 
+            value={pickUpDate} 
+            onchange={handlePickUpDateChange}
+            min={minDate} 
+            required></lightning-input>
+
+            <lightning-input type="text" 
+            label="Distence covered" 
+            value={distanceCovered}
+            onchange={handleDistanceCoveredChange} 
+            required></lightning-input>
+
+            <lightning-input 
+            type="number" 
+            label="Total Fare (₹)" 
+            value={totalFare} 
+            readonly></lightning-input>
+
+            <lightning-input 
+            type="text" 
+            label="Name" 
+            value={name} 
+            onclick={handleNameChange} 
+            required></lightning-input>
+            
+            
+            <lightning-input 
+            type="tel" 
+            label="Mobile Number" 
+            value={phone} 
+            onchange={handlePhoneChange} 
+            required></lightning-input>
+
+            <lightning-input 
+            type="email" 
+            label="Email" 
+            value={email} 
+            onchange={handleEmailChange} 
+            required></lightning-input>
+
+            <lightning-button 
+            variant="brand" 
+            label="Book Vehicle" 
+            onclick={handleBookVehicle} 
+            class="slds-m-top_medium"></lightning-button>
+
+
+        </div>
+    </lightning-card>
+</template>

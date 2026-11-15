@@ -1,0 +1,45 @@
+<template>
+    <lightning-card title="Book Appointment" icon-name="standard:health_care">
+        <div class="slds-var-p-around-medium">
+            
+            <lightning-combobox 
+            label="Select Doctor" 
+            name="doctorSelect" 
+            value={selectedDoctorId} 
+            placeholder="Choose a Doctor..." 
+            options={doctorOptions} 
+            onchange={handleDoctorChange} 
+            required></lightning-combobox>
+
+            <p>{selectedDoctorId}</p>
+            
+            <lightning-input 
+            type="text" 
+            label="Patient Name" 
+            value={patientName} 
+            onchange={handleNameChange} 
+            required></lightning-input>
+            
+            <lightning-input 
+              type="number" 
+              label="Patient Age" 
+              value={patientAge} 
+              onchange={handleAgeChange}
+              required ></lightning-input>
+
+                <lightning-input 
+                type="date"
+                label="Appointment Date"
+                value={appointmentDate}
+                onchange={handleDateChange}
+                min={minDate}
+                required ></lightning-input>
+
+                <lightning-button
+                  variant="brand"
+                  label="Book Appointment" 
+                  onclick={handleBookAppointment} 
+                ></lightning-button>
+            </div>
+    </lightning-card>
+</template>
